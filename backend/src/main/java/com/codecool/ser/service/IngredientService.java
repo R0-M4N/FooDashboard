@@ -19,7 +19,7 @@ public class IngredientService {
     }
 
     public Ingredient addIngredient(Ingredient ingredient) {
-        Ingredient newIngredient = new Ingredient(ingredient.getName(), ingredient.getProtein());
+        Ingredient newIngredient = new Ingredient(ingredient.getName(), ingredient.getProtein(), ingredient.getCategory());
         return ingredientRepository.save(newIngredient);
     }
 }

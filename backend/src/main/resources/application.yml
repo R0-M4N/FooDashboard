@@ -1,24 +1,33 @@
 dataset:
   ingredients:
-    - name: Pineapple
-      protein: 10
-    - name: Chicken meat
-      protein: 30
-    - name: Grape
-      protein: 5
-    - name: Kale
-      protein: 1
-    - name: Cow meat
-      protein: 123
-    - name: Milk
-      protein: 20
-    - name: Hazelnut
-      protein: 3
-    - name: Cheese
-      protein: 60
-    - name: Water
-      protein: 0
-    - name: Bread
-      protein: 200
-    - name: Shrimp
-      protein: 50
+      - name: Pineapple
+        protein: 25
+        category: FRUIT
+      - name: Grape
+        protein: 5
+        category: FRUIT
+      - name: Chicken meat
+        protein: 10
+        category: MEAT
+      - name: Cow meat
+        protein: 123
+        category: MEAT
+      - name: Kale
+        protein: 1
+        category: VEGETABLE
+      - name: Shrimp
+        protein: 50
+        category: FISH
+      - name: Milk
+        protein: 20
+        category: DAIRY
+      - name: Cheese
+        protein: 60
+        category: DAIRY
+      - name: Brown Bread
+        protein: 200
+        category: BREAD
+      - name: Hazelnut
+        protein: 3
+        category: NUT
+

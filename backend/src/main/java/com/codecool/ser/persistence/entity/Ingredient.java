@@ -1,35 +1,29 @@
 package com.codecool.ser.persistence.entity;
 
-import lombok.Getter;
-import lombok.Setter;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+
+import com.codecool.ser.data.IngredientCategory;
+import lombok.*;
+
+import javax.persistence.*;
+
 
 @Entity
 @Setter
 @Getter
+@NoArgsConstructor
+@ToString
 public class Ingredient {
     @Id
     @GeneratedValue
-    private int id;
+    private long id;
     private String name;
     private int protein;
+    @Enumerated(value = EnumType.STRING)
+    private IngredientCategory category;
 
-    public Ingredient() {
-    }
-
-    public Ingredient(String name, int protein) {
+    public Ingredient(String name, int protein, IngredientCategory category) {
         this.name = name;
         this.protein = protein;
-    }
-
-    @Override
-    public String toString() {
-        return "Ingredient{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", protein=" + protein +
-                '}';
+        this.category = category;
     }
 }

@@ -1,12 +1,11 @@
-import { Button} from "@mui/material"
+import { Button } from "@mui/material"
 
 const ShowResult = ({result}) => {
-    console.log("result")
-    return (
-        <Button>
-            {result.name ? result.name : ""}
-        </Button>
-    )
+        return (
+            <Button style={{top: 80}}>
+                {result.name ? result.name : ""}
+            </Button>
+        )
 }
 
 export default ShowResult;

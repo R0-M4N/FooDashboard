@@ -1,8 +1,8 @@
 package com.codecool.ser.endpoint;
 
-import com.codecool.ser.persistence.repository.IngredientRepository;
-import com.codecool.ser.service.IngredientService;
+import com.codecool.ser.data.IngredientCategory;
 import com.codecool.ser.persistence.entity.Ingredient;
+import com.codecool.ser.service.IngredientService;
 import com.codecool.ser.service.IngredientSwapService;
 import org.springframework.web.bind.annotation.*;
 
@@ -30,8 +30,15 @@ public class IngredientEndpoint {
         return ingredientService.addIngredient(ingredient);
     }
 
-    @PostMapping("/swap")
-    public Ingredient swapIngredient(@RequestBody String name){
-        return ingredientSwapService.swapIngredients(name);
+    @GetMapping("/swap/{id}")
+    public Ingredient swapByProtein(@PathVariable long id) {
+        return ingredientSwapService.swapByProtein(id);
+    }
+
+    @GetMapping("/swap/{category}/{id}")
+    public List<Ingredient> swapByCategoryAndProtein(@PathVariable("category") IngredientCategory category, @PathVariable("id") long id) {
+
+        Ingredient ingredient = ingredientSwapService.findById(id);
+        return ingredientSwapService.swapIngredientByCategoryAndProtein(category, ingredient);
     }
 }

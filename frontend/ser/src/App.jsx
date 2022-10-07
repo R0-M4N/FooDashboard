@@ -1,10 +1,13 @@
-import Routing from './components/routing/Routing';
+import React from 'react'
+import Routing from './components/routing/Routing'
+
 
 function App() {
   return (
     <div className='App'>
-        <Routing />
+      <Routing />
     </div>
+    
   );
 }
 
